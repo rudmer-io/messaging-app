@@ -1,0 +1,41 @@
+<div id="sidebar">
+    <div id="firstRow">
+        <div id="sidebarHeader">
+            <div class="avatarContainer">
+                <img src="../../assets/images/noPic.svg">
+            </div>
+            <div class="actionsContainer">
+                <img src="../../assets/images/statusIcon.svg">
+                <img src="../../assets/images/chatIcon.svg">
+                <img src="../../assets/images/moreVertIcon.svg">
+            </div>
+        </div>
+        <div id="searchBox">
+            <img width="19" src="../../assets/images/searchIcon.svg">
+            <input type="text" placeholder="Search contact or chat">
+        </div>
+    </div>
+    <div id="sidebarContent">
+        <!-- <div id="noChats">
+            No chats
+        </div> -->
+        <div class="conversation" *ngFor="let message of convesations">
+            <div class="picture">
+                <img src="../../assets/images/noPic.svg">
+            </div>
+            <div class="content">
+                <div class="conversationHeader">
+                    <div class="nameContact">{{message.name}}</div>
+                    <div class="timeStamp">
+                        {{message.time}}
+                    </div>
+                </div>
+                <div class="message">
+                    <img *ngIf="!message.read" src="../../assets/images/doubleTick.svg">
+                    <img *ngIf="message.read" src="../../assets/images/doubleTickBlue.svg"> {{message.latestMessage}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
