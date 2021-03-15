@@ -1,0 +1,38 @@
+<div id="container">
+    <div id="header">
+        <div class="avatarSection">
+            <div class="picture">
+                <img src="../../assets/images/noPic.svg">
+            </div>
+            <div class="nameSection">
+                {{conversation.name}}
+            </div>
+        </div>
+        <div class="actionButtons">
+            <img src="../../assets/images/searchIcon.svg">
+            <img src="../../assets/images/moreVertIcon.svg">
+        </div>
+    </div>
+    <div id="body">
+        <div class="message" [ngClass]="{me: message.me}" *ngFor="let message of conversation.messages">
+
+            <div class="messageContent">
+                {{message.body}}
+                <div class="time">{{message.time}}</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="smileIcon">
+            <img (click)="emojiPickerVisible = !emojiPickerVisible" src="../../assets/images/smileIcon.svg">
+            <emoji-mart class="emojiSelector" (emojiClick)="addEmoji($event)" *ngIf="emojiPickerVisible" title="Pick your emoji…" emoji="point_up">
+            </emoji-mart>
+        </div>
+        <div id="chatArea">
+            <textarea [(ngModel)]="message" (keyup.enter)="submitMessage($event)" placeholder="Escribe tu mensaje aqui"></textarea>
+        </div>
+        <div id="sendIcon">
+            <img src="../../assets/images/send.svg">
+        </div>
+    </div>
+</div>

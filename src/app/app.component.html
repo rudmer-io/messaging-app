@@ -3,8 +3,21 @@
 
 <div id="chatContainer">
 
-    <app-sidebar></app-sidebar>
-    <div id="chat"></div>
+    <app-sidebar (messageOpened)="onMessageOpened($event)"></app-sidebar>
+    <div id="chat">
+        <div id="chatPlaceholder" *ngIf="!conversation">
+            <img width="150" src="../assets/images/chatIcon.svg">
+            <h2>No chats selected</h2>
+            <p>Please select any message to view content.</p>
+            <div class="separator">
+                <p>by ❤
+                    <a href="">Discrete Events</a>
+                </p>
+            </div>
+
+        </div>
+        <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat>
+    </div>
 
 </div>
 

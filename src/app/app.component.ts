@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'messaging-app-angular';
+  conversation;
+
+  onMessageOpened(conversation){
+    this.conversation = conversation;
+
+  }
 }

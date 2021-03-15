@@ -12,14 +12,13 @@
         </div>
         <div id="searchBox">
             <img width="19" src="../../assets/images/searchIcon.svg">
-            <input type="text" placeholder="Search contact or chat">
+            <input [(ngModel)]="searchText" type="text" placeholder="Search contact or chat">
         </div>
     </div>
     <div id="sidebarContent">
-        <!-- <div id="noChats">
-            No chats
-        </div> -->
-        <div class="conversation" *ngFor="let message of convesations">
+        <div class="conversation" *ngFor="
+        let message of !searchText ? conversations: filteredConversations" (click)="messageOpened.emit(message)">
+            <!-- <div class="conversation" *ngFor="let message of conversations" (click)="messageOpened.emit(message)"> -->
             <div class="picture">
                 <img src="../../assets/images/noPic.svg">
             </div>
@@ -36,6 +35,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@ctrl/ngx-emoji-mart/picker';
 body {
     margin: 0px;
+    font-family: sans-serif;
+    color: #a2a3a4;
+    a {
+        color: #003459;
+        text-decoration: none;
+    }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
